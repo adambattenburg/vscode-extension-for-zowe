@@ -111,6 +111,21 @@ export async function activate(context: vscode.ExtensionContext) {
     vscode.commands.registerCommand("zowe.uss.fullPath", (node) => enterUSSPattern(node, ussFileProvider));
     vscode.commands.registerCommand("zowe.uss.ZoweUSSNode.open", (node) => openUSS(node));
     vscode.commands.registerCommand("zowe.uss.removeSession", async (node) => ussFileProvider.deleteSession(node));
+
+    // Test API
+    let api = {
+        sum(a, b) {
+            return a + b;
+        },
+        mul(a, b) {
+            return a * b;
+        }
+    };
+    // Expose API 
+    // return datasetProvider;
+
+    // Basic API First
+    return api;
 }
 
 /**
